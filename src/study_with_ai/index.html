@@ -18,6 +18,20 @@
   <style>
     .stamp-oval .stamp-taegeuk { position:absolute; z-index:2; left:22px; top:43px; font:700 16px/1 Georgia,serif; letter-spacing:0; opacity:.82; }
     .stamp-oval .stamp-taegeuk.right { right:22px; left:auto; }
+    /* Reference-style blue departure stamp: wide nested oval and clear type hierarchy. */
+    .stamp-oval{
+      width:216px!important;height:124px!important;right:0!important;top:4px!important;
+      border:3px solid #2ea5c6!important;background:rgba(54,169,201,.025);
+      font-family:'Roboto Slab',Georgia,serif!important;letter-spacing:.09em!important;
+    }
+    .stamp-oval::before{inset:10px 17px!important;border:1.5px solid rgba(54,169,201,.82)!important}
+    .stamp-oval .stamp-country{font-size:8px!important;letter-spacing:.14em!important}
+    .stamp-oval .stamp-type{margin-top:3px;font-size:12px!important;font-weight:700!important;letter-spacing:.16em!important}
+    .stamp-oval .stamp-code{margin-top:1px;font-size:19px!important;font-weight:700!important;letter-spacing:.16em!important}
+    .stamp-oval .stamp-date{font-size:11px!important;letter-spacing:.08em!important}
+    .stamp-oval .stamp-airport{margin-top:3px;font-size:7px!important;letter-spacing:.12em!important}
+    .stamp-oval .stamp-taegeuk{left:23px!important;top:52px!important;font-size:17px!important;opacity:.9!important}
+    .stamp-oval .stamp-taegeuk.right{right:23px!important;left:auto!important}
   </style>
 </head>
 <body>
