@@ -20,6 +20,10 @@
     body,.hero,.section-title h2,.boarding h3,.boarding-meta,.terminal h3,.terminal-head span,.log h3,.pass-name,.dest,.boarding,.terminal,.log,.pass-main{
       font-family:'Noto Sans KR','Sandoll Gothic Neo','Sandoll','산돌구름체',sans-serif;
     }
+    .scroll-plane{position:fixed;z-index:20;top:12vh;left:-34px;width:24px;color:var(--amber);pointer-events:none;opacity:0}
+    .scroll-plane.fly{animation:scrollFly 1.35s cubic-bezier(.2,.75,.25,1) both}
+    @keyframes scrollFly{0%{left:-34px;opacity:0;transform:translateY(28px) rotate(8deg)}12%{opacity:1;transform:translateY(18px) rotate(5deg)}28%{left:22vw;transform:translateY(-18px) rotate(-7deg)}48%{left:46vw;transform:translateY(-42px) rotate(-10deg)}68%{left:70vw;transform:translateY(18px) rotate(8deg)}86%{left:88vw;transform:translateY(42px) rotate(10deg)}100%{left:calc(100vw + 34px);opacity:0;transform:translateY(-8px) rotate(-2deg)}}
+    @media(prefers-reduced-motion:reduce){.scroll-plane{display:none}}
     .stamp-oval .stamp-taegeuk { position:absolute; z-index:2; left:22px; top:43px; font:700 16px/1 Georgia,serif; letter-spacing:0; opacity:.82; }
     .stamp-oval .stamp-taegeuk.right { right:22px; left:auto; }
     /* Reference-style blue departure stamp: wide nested oval and clear type hierarchy. */
@@ -66,9 +70,12 @@
     <section id="log"><div class="section-title"><span class="code">05 / FLIGHT LOG</span><h2>학습 기록</h2><span class="rule"></span></div><article class="log"><div class="date">2026.08.28<br>DAY 1</div><div><h3>탑승 수속 완료 — 사전 미션 제출</h3><ul><li>엔코아 데이터분석&amp;AI 머신러닝 부트캠프 개강</li><li>사전 미션(기초통계 · 벡터 · 회귀분석 · 머신러닝 기초 12문제) 정리 및 제출</li></ul></div></article><p class="log-empty">▸ 다음 로그를 기다리는 중 — DAY 2 업데이트 예정</p></section>
   </main>
   <footer class="wrap"><div class="section-title"><span class="code">06 / ARRIVAL</span><h2>연락하기</h2><span class="rule"></span></div><div class="pass"><div class="pass-main"><p class="pass-name">송수림 · SONG, SU-LIM</p><p class="pass-role">TECHNICAL PROGRAM MANAGER</p><div class="pass-grid"><div><b>EMAIL</b><a href="mailto:slsong@en-core.com">slsong@en-core.com</a></div><div><b>PHONE</b><span>[연락처 입력]</span></div><div><b>LINK</b><a href="https://slsong.tistory.com/" target="_blank" rel="noopener noreferrer">Tistory</a></div></div></div><div class="stub"><span>BOARDING · PASS</span></div></div></footer>
+  <svg class="scroll-plane" id="scroll-plane" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2.5 2v1.5L12 21l4.5 1.5V21L14 19v-5.5l7 2.5z"/></svg>
   <script>
     const nameText='SONG, SU-LIM', container=document.getElementById('flap-name'), chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ', reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
     nameText.split('').forEach((ch,i)=>{const flap=document.createElement('span'),inner=document.createElement('span'),blank=ch===' '||ch===',';flap.className='flap';inner.textContent=ch===' '?'\u00A0':ch;flap.append(inner);if(blank){flap.style.background='transparent';flap.style.border='none'}container.append(flap);if(!reduce&&!blank){let ticks=0,max=10+i*2;const timer=setInterval(()=>{inner.textContent=chars[Math.floor(Math.random()*chars.length)];if(++ticks>=max){clearInterval(timer);inner.textContent=ch}},45)}});
+    const scrollPlane=document.getElementById('scroll-plane');let scrollTimer;
+    addEventListener('scroll',()=>{if(reduce)return;scrollPlane.classList.remove('fly');void scrollPlane.offsetWidth;scrollPlane.classList.add('fly');clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>scrollPlane.classList.remove('fly'),1400)},{passive:true});
   </script>
 </body>
 </html>
