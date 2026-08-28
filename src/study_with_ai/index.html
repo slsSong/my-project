@@ -33,15 +33,18 @@
     /* Korean taegeuk wave marks sit in the ring between the two ovals. */
     .stamp-oval .stamp-taegeuk{
       left:3px!important;top:50%!important;transform:translateY(-50%) rotate(-90deg)!important;
-      width:22px;height:30px;display:grid;place-items:center;
-      font:700 31px/.55 Georgia,serif!important;letter-spacing:0!important;opacity:.95!important;
+      width:23px;height:23px;display:grid;place-items:center;
+      border:1.8px solid currentColor;border-radius:50%;
+      font-size:0!important;letter-spacing:0!important;opacity:.95!important;
     }
+    .stamp-oval .stamp-taegeuk i{display:block;position:static;transform:rotate(90deg);font:700 19px/.8 Georgia,serif!important;font-style:normal;letter-spacing:0!important}
     .stamp-oval .stamp-taegeuk.right{right:3px!important;left:auto!important;transform:translateY(-50%) rotate(90deg)!important}
+    .stamp-oval .stamp-taegeuk.right i{transform:rotate(-90deg)}
   </style>
 </head>
 <body>
   <header class="hero">
-    <div class="stamps" aria-hidden="true"><div class="stamp stamp-square"><span>REPUBLIC OF KOREA</span><b>IMMIGRATION</b><strong>ADMITTED</strong><em>2026. AUG. 28</em><small>UNTIL</small><i>INCHEON AIRPORT</i></div><div class="stamp stamp-oval"><span class="stamp-country">REPUBLIC OF KOREA</span><span class="stamp-code">SEL</span><span class="stamp-type">IMMIGRATION</span><span class="stamp-date">2026. AUG. 28</span><span class="stamp-airport">SEOUL · KOREA</span><span class="stamp-taegeuk">〰</span><span class="stamp-taegeuk right">〰</span></div></div>
+    <div class="stamps" aria-hidden="true"><div class="stamp stamp-square"><span>REPUBLIC OF KOREA</span><b>IMMIGRATION</b><strong>ADMITTED</strong><em>2026. AUG. 28</em><small>UNTIL</small><i>INCHEON AIRPORT</i></div><div class="stamp stamp-oval"><span class="stamp-country">REPUBLIC OF KOREA</span><span class="stamp-code">SEL</span><span class="stamp-type">IMMIGRATION</span><span class="stamp-date">2026. AUG. 28</span><span class="stamp-airport">SEOUL · KOREA</span><span class="stamp-taegeuk"><i>~</i></span><span class="stamp-taegeuk right"><i>~</i></span></div></div>
     <div class="wrap">
       <p class="eyebrow"><span class="dot"></span>PROFILE / BOARDING PASS · SONG, SU-LIM</p>
       <div class="flap-row" id="flap-name" aria-label="SONG, SU-LIM"></div>
