@@ -8,12 +8,8 @@ __pycache__/
 tmp/
 
 # Local documents and reference assets
-/web/assets/
-/web/*.pdf
-
-# Empty website placeholders retained during the redesign
-/web/index.html
-/web/name-style-options.html
+/src/study_with_ai/assets/
+/src/study_with_ai/documents/
 
 # Separate local repository
 /my project/
