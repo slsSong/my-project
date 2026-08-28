@@ -30,13 +30,18 @@
     .stamp-oval .stamp-code{margin-top:1px;font-size:19px!important;font-weight:700!important;letter-spacing:.16em!important}
     .stamp-oval .stamp-date{font-size:11px!important;letter-spacing:.08em!important}
     .stamp-oval .stamp-airport{margin-top:3px;font-size:7px!important;letter-spacing:.12em!important}
-    .stamp-oval .stamp-taegeuk{left:23px!important;top:52px!important;font-size:17px!important;opacity:.9!important}
-    .stamp-oval .stamp-taegeuk.right{right:23px!important;left:auto!important}
+    /* Korean taegeuk wave marks sit in the ring between the two ovals. */
+    .stamp-oval .stamp-taegeuk{
+      left:3px!important;top:50%!important;transform:translateY(-50%) rotate(-90deg)!important;
+      width:22px;height:30px;display:grid;place-items:center;
+      font:700 31px/.55 Georgia,serif!important;letter-spacing:0!important;opacity:.95!important;
+    }
+    .stamp-oval .stamp-taegeuk.right{right:3px!important;left:auto!important;transform:translateY(-50%) rotate(90deg)!important}
   </style>
 </head>
 <body>
   <header class="hero">
-    <div class="stamps" aria-hidden="true"><div class="stamp stamp-square"><span>REPUBLIC OF KOREA</span><b>IMMIGRATION</b><strong>ADMITTED</strong><em>2026. AUG. 28</em><small>UNTIL</small><i>INCHEON AIRPORT</i></div><div class="stamp stamp-oval"><span class="stamp-country">REPUBLIC OF KOREA</span><span class="stamp-code">SEL</span><span class="stamp-type">IMMIGRATION</span><span class="stamp-date">2026. AUG. 28</span><span class="stamp-airport">SEOUL · KOREA</span><span class="stamp-taegeuk">☯</span><span class="stamp-taegeuk right">☯</span></div></div>
+    <div class="stamps" aria-hidden="true"><div class="stamp stamp-square"><span>REPUBLIC OF KOREA</span><b>IMMIGRATION</b><strong>ADMITTED</strong><em>2026. AUG. 28</em><small>UNTIL</small><i>INCHEON AIRPORT</i></div><div class="stamp stamp-oval"><span class="stamp-country">REPUBLIC OF KOREA</span><span class="stamp-code">SEL</span><span class="stamp-type">IMMIGRATION</span><span class="stamp-date">2026. AUG. 28</span><span class="stamp-airport">SEOUL · KOREA</span><span class="stamp-taegeuk">〰</span><span class="stamp-taegeuk right">〰</span></div></div>
     <div class="wrap">
       <p class="eyebrow"><span class="dot"></span>PROFILE / BOARDING PASS · SONG, SU-LIM</p>
       <div class="flap-row" id="flap-name" aria-label="SONG, SU-LIM"></div>
